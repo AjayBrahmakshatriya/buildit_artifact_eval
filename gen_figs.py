@@ -29,7 +29,7 @@ def get_command_output(command):
 
 
 def compile_buildit_program(infile, outfile):
-	compile_command = "c++ -I " + DIR_PATH+"/buildit/include -O3 -L " + DIR_PATH + "/buildit/build -rdynamic " + DIR_PATH + "/inputs/" + infile + " -o " + DIR_PATH + "/outputs/" + outfile + " -lbuildit"
+	compile_command = "c++ -std=c++11 -I " + DIR_PATH+"/buildit/include -O3 -L " + DIR_PATH + "/buildit/build -rdynamic " + DIR_PATH + "/inputs/" + infile + " -o " + DIR_PATH + "/outputs/" + outfile + " -lbuildit"
 	get_command_output(compile_command)
 
 def print_cell(f, val, w = 1):
