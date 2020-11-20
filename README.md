@@ -25,8 +25,8 @@ We will start by cloning this repository on the evaluation system using the foll
 
 If you have already cloned this repository without the `--recursive` flag, you can get the submodules by running the following commands. Otherwise you can directly proceed to Building BuildIt. 
   
-   git submodule init
-   git submodule update
+    git submodule init
+    git submodule update
 
 ### Building BuildIt
 Start by navigating to the `buildit_artifact_eval` directory. We will first build the BuildIt library by running the following commands from the repo's top level directory - 
@@ -38,7 +38,7 @@ If no errors are reported, the BuildIt library and all the sample/test cases are
  
     make run
 
-This command should run the test cases and print a bunch of "OK"s. If some test case fails, the system with print the name of the failing test case. 
+This command should run the test cases and print a bunch of "OK"s. If some test case fails, the system will print the name of the failing test case. 
 If all test cases succeed you can proceed to "Running the evaluation"
 
 ### Running the evaluation

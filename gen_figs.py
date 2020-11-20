@@ -135,7 +135,7 @@ def main():
 	os.makedirs(OUTPUT_PATH)
 
 
-	#run_fig17()
+	run_fig17()
 	run_fig24()
 
 
