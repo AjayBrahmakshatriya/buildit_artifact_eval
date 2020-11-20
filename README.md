@@ -41,7 +41,7 @@ If no errors are reported, the BuildIt library and all the sample/test cases are
 This command should run the test cases and print a bunch of "OK"s. If some test case fails, the system with print the name of the failing test case. 
 If all test cases succeed you can proceed to "Running the evaluation"
 
-## Running the evaluation
+### Running the evaluation
 First, navigate to the repo's top level directory by running  the command `cd ../`. We will now run a command that generates the table in Figure 17 of the paper and the code snippets in Figure 24 of the paper (and a few more examples). Run the command - 
 
     python gen_figs.py
