@@ -34,7 +34,11 @@ Start by navigating to the `buildit_artifact_eval` directory. We will first buil
     cd buildit
     make -j$(nproc)
 
-If no errors are reported, the BuildIt library and all the sample/test cases are built correctly. You can quickly run the test cases to make sure BuildIt is running properly on your system using the command - 
+If no errors are reported, the BuildIt library and all the sample/test cases are built correctly. 
+
+If you are running on MacOS and get some errors about missing headers, it might be because your xcode installation is broken after the Catalina upgrade. This is a known issue with MacOS that has got nothing to do with BuildIt. A possible fix for this is - https://stackoverflow.com/questions/58278260/cant-compile-a-c-program-on-a-mac-after-upgrading-to-catalina-10-15/58349403#58349403
+
+If all goes well, you can quickly run the test cases to make sure BuildIt is running properly on your system using the command - 
  
     make run
 
