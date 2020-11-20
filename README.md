@@ -55,7 +55,7 @@ If everything goes correctly, the command should run in less than a few minutes 
 
 ### Interpreting Part 1 results
 For Part 1, the script runs the code in Figure 17 with increasing values for `iter` and with the memoization optimization enabled and then disabled. The input code for this part is in the file `inputs/fig17/cpp`. After this part runs successfully, the script should print a table to the console with 5 columns. 
-The first column like in the table in the paper should be increasing number of iters. Unlike the paper we run this for 16 iters instead of 10 to clearly demonstrate the execution time difference. The second column shows the number of `build_context` objects instantiated during the execution with memoization enabled and the third column should show the execution time for the experiment. The values in the second column should be linearly increasing with the `iter` value. 
+The first column like in the table in the paper should be increasing number of iters. Unlike the paper we run this for 18 iters instead of 10 to clearly demonstrate the execution time difference. The second column shows the number of `build_context` objects instantiated during the execution with memoization enabled and the third column should show the execution time for the experiment. The values in the second column should be linearly increasing with the `iter` value. 
 
 The fourth and the fifth column similarly show the number of `builder_context` objects instantiated and the execution time with memoization disabled. The values in column four should increase exponentially with `iter` and so should the execution time (almost doubling with one increase in iter). 
 

@@ -5,7 +5,7 @@ import time
 
 DIR_PATH=os.path.dirname(os.path.realpath(__file__)).rstrip("/")
 
-
+MAX_ITER=18
 
 def get_command_output(command):
 	start = time.time()
@@ -67,7 +67,7 @@ def gen_fig17(res_mem, res_nomem):
 	f.write("-" * width)
 	f.write("\n")
 
-	for i in range(16):
+	for i in range(MAX_ITER):
 		f.write("|")	
 		print_cell(f, str(i+1))
 		print_cell(f, res_mem[i][0].strip())
@@ -89,13 +89,13 @@ def run_fig17():
 	compile_buildit_program("fig17.cpp", "fig17")
 	
 	print("Running with Memoization enabled")
-	res_mem = [0] * 16
-	for i in range(16):
+	res_mem = [0] * MAX_ITER
+	for i in range(MAX_ITER):
 		res_mem[i] = get_command_output(DIR_PATH + "/outputs/fig17 " + str(i+1))
 
 	print("Running with Memoization disabled")
-	res_nomem = [0] * 16
-	for i in range(16):
+	res_nomem = [0] * MAX_ITER
+	for i in range(MAX_ITER):
 		res_nomem[i] = get_command_output(DIR_PATH + "/outputs/fig17 " + str(i+1) + " no_memoize")
 	
 	gen_fig17(res_mem, res_nomem)	
