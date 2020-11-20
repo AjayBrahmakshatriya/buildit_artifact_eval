@@ -39,7 +39,7 @@ static dyn_var<int> interpret_bf(dyn_var<int> argc, dyn_var<char**> argv, const 
 
 	dyn_var<int> pointer = 0;
 	static_var<int> pc = 0;
-	dyn_var<int[256]> tape = {0};
+	dyn_var<int[65536]> tape = {0};
 	while (bf_program[pc] != 0) {
 		if (bf_program[pc] == '>') {
 			pointer = pointer + 1;

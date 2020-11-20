@@ -106,15 +106,15 @@ def run_fig24():
 	print("Running evaluation for Figure 24")
 	compile_buildit_program("fig24.cpp", "fig24")
 	
-	inputs = [("\"+[+[+[-]]]\"", False), ("\"++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.\"", True), ("\"++++++++[>+>++++<<-]>++>>+<[-[>>+<<-]+>>]>+[-<<<[->[+[-]+>++>>>-<<]<[<]>>++++++[<<+++++>>-]+<<++.[-]<<]>.>+[>>]>+]\"", False)]
+	inputs = [("\"+[+[+[-]]]\"", False), ("\"++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.\"", True), (open(DIR_PATH + "/inputs/mandel.bf").read().strip(), False)]
 	for counter, (program, to_run) in enumerate(inputs):
 		print("-" * 20)
-		print("Running for input ", program)
-		output, _ = get_command_output(DIR_PATH + "/outputs/fig24 " + program)
+		print("Running for input ", str(counter+1))
 		filepath = DIR_PATH + "/outputs/fig24_ex" + str(counter+1) + ".cpp"
-		f = open(filepath, "w")
-		f.write(output)
-		f.close()
+		output, _ = get_command_output(DIR_PATH + "/outputs/fig24 " + program + " > " + filepath)
+		#f = open(filepath, "w")
+		#f.write(output)
+		#f.close()
 
 		print("Output written to ", filepath)
 		get_command_output("c++ -O3 " + filepath + " -o " + DIR_PATH + "/outputs/fig24_ex" + str(counter+1))
@@ -135,7 +135,7 @@ def main():
 	os.makedirs(OUTPUT_PATH)
 
 
-	run_fig17()
+	#run_fig17()
 	run_fig24()
 
 
